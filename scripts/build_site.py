@@ -51,9 +51,6 @@ def publication(p):
         <p class="authors">{authors}</p>
         <p class="paper-desc">{e(p['description'])}</p>
         <div class="paper-links">{links}</div>
-        <details class="cite"><summary aria-label="BibTeX for {e(p['title'], quote=True)}">BibTeX</summary>
-          <div class="citation-box"><button class="copy-citation" type="button" hidden>Copy BibTeX</button><pre><code>{e(bibtex(p))}</code></pre></div>
-        </details>
       </div>
     </article>'''
 
@@ -136,7 +133,7 @@ html = f'''<!doctype html>
     </section>
     <div class="interests"><strong>Research interests</strong><div class="interest-items"><span>Reinforcement learning</span><span>Embodied intelligence</span><span>Multi-agent systems</span></div></div>
     <section class="section" id="news" aria-labelledby="news-heading">
-      <div class="section-top"><h2 id="news-heading">News</h2><span class="count">Paper acceptances</span></div>
+      <div class="section-top"><h2 id="news-heading">News</h2></div>
       <ul class="news-list">{news_items}</ul>
     </section>
     <section class="section pub-section" id="publications" aria-labelledby="pub-heading">

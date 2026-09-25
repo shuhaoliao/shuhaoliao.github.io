@@ -42,22 +42,3 @@ reducedMotion.addEventListener('change', event => { motionEnabled = !event.match
 document.addEventListener('visibilitychange', syncVideos);
 motionLabel();
 syncVideos();
-
-document.querySelectorAll('.copy-citation').forEach(button => {
-  button.hidden = false;
-  button.addEventListener('click', async () => {
-    const code = button.parentElement.querySelector('code');
-    try {
-      await navigator.clipboard.writeText(code.textContent);
-      button.textContent = 'Copied!';
-    } catch (_) {
-      const selection = window.getSelection();
-      const range = document.createRange();
-      range.selectNodeContents(code);
-      selection.removeAllRanges();
-      selection.addRange(range);
-      button.textContent = 'Selected — press Ctrl/Cmd+C';
-    }
-    setTimeout(() => { button.textContent = 'Copy BibTeX'; }, 2400);
-  });
-});
