@@ -1,0 +1,95 @@
+{
+  "name": "Shuhao Liao",
+  "url": "https://shuhaoliao.github.io",
+  "tagline": "Robot Learning & Embodied Intelligence",
+  "position": "Ph.D. Student · Beihang University",
+  "affiliations": ["Beihang University", "National University of Singapore"],
+  "email": "lsh_iai@buaa.edu.cn",
+  "scholar": "https://scholar.google.com/citations?user=jkdFnxkAAAAJ&hl=en",
+  "cv": "",
+  "updated": "2026-09-25",
+  "bio": [
+    [
+      {"text": "I am a Ph.D. student at the State Key Laboratory of Complex and Critical Software Environment (SKLCCSE), Beihang University, advised by "},
+      {"text": "Wenjun Wu", "url": "http://admire.buaanlsde.cn/"},
+      {"text": " and Jie Luo. In 2025–2026, I am a joint Ph.D. student at the National University of Singapore (NUS), advised by "},
+      {"text": "Guillaume Sartoretti", "url": "https://scholar.google.com/citations?user=n7NzZ0sAAAAJ&hl=fr"},
+      {"text": "."}
+    ],
+    "My research focuses on robot learning and embodied intelligence, spanning reinforcement learning, autonomous exploration, legged locomotion, and multi-agent decision-making. I am interested in connecting learning algorithms with reliable behavior on real robots."
+  ],
+  "socials": [
+    {"label": "GitHub", "url": "https://github.com/shuhaoliao"}
+  ],
+  "news": [
+    {"date": "2026-06", "label": "2026-06", "topic": "vision-based legged locomotion", "paper": "KiVi", "paper_id": "kivi", "venue": "IROS 2026", "url": "https://marmotlab.github.io/kivi-quadruped/", "source": "https://www.marmotlab.org/blog/2026/06/17/IROS2026.html"},
+    {"date": "2025-01", "label": "2025-01", "topic": "geometric multi-agent pathfinding", "paper": "SIGMA", "paper_id": "sigma", "venue": "ICRA 2025", "url": "https://arxiv.org/abs/2502.06440", "source": "https://www.marmotlab.org/blog/2025/01/28/ICRA2025.html"},
+    {"date": "2023-12", "label": "2023-12", "topic": "partial symmetry in multi-agent reinforcement learning", "paper": "PSE", "paper_id": "pse", "venue": "AAAI 2024", "url": "https://xinyu-site.github.io/PSE/", "source": "https://xinyu-site.github.io/"},
+    {"date": "2023", "label": "2023", "topic": "a many-agent reinforcement learning platform for aerial robots", "paper": "Air-M", "paper_id": "air-m", "venue": "IROS 2023", "url": "https://ieeexplore.ieee.org/document/10341405", "source": "https://dblp.org/pid/364/3751.html"}
+  ],
+  "publications": [
+    {
+      "id": "fare", "year": 2026, "venue": "arXiv · 2026", "venue_full": "arXiv preprint arXiv:2601.14681",
+      "title": "FARE: Fast-Slow Agentic Robotic Exploration",
+      "authors": ["Shuhao Liao", "Xuxin Lv", "Jeric Lew", "Shizhe Zhang", "Jingsong Liang", "Peizhuo Li", "Yuhong Cao", "Wenjun Wu", "Guillaume Sartoretti"],
+      "description": "Connecting language-based global reasoning with reactive local control for autonomous exploration.",
+      "media": "fare", "video": true,
+      "links": [{"label": "Paper", "url": "https://arxiv.org/abs/2601.14681"}],
+      "type": "article", "arxiv": "2601.14681"
+    },
+    {
+      "id": "gpo", "year": 2026, "venue": "arXiv · 2026", "venue_full": "arXiv preprint arXiv:2601.20668",
+      "title": "GPO: Growing Policy Optimization for Legged Robot Locomotion and Whole-Body Control",
+      "authors": ["Shuhao Liao", "Peizhuo Li", "Xinrong Yang", "Linnan Chang", "Zhaoxin Fan", "Qing Wang", "Lei Shi", "Yuhong Cao", "Wenjun Wu", "Guillaume Sartoretti"],
+      "description": "Progressively expanding the action space to make reinforcement learning for legged robots more effective.",
+      "media": "gpo", "video": true,
+      "links": [{"label": "Paper", "url": "https://arxiv.org/abs/2601.20668"}],
+      "type": "article", "arxiv": "2601.20668"
+    },
+    {
+      "id": "taga", "year": 2026, "venue": "arXiv · 2026", "venue_full": "arXiv preprint arXiv:2606.05880",
+      "title": "TAGA: Terrain-aware Active Gaze Learning for Generalizable Agile Humanoid Locomotion",
+      "authors": ["Peizhuo Li", "Hongyi Li", "Mingfeng Fan", "Fangzhou Xu", "Shuhao Liao", "Yuxuan Ma", "Zicheng Zeng", "Ze Wang", "Yongbin Jin", "Yuhong Cao", "Hongtao Wang", "Guillaume Sartoretti"],
+      "description": "Learning to attend to informative terrain for agile, perceptive humanoid locomotion.",
+      "media": "taga", "video": true,
+      "links": [{"label": "Paper", "url": "https://arxiv.org/abs/2606.05880"}, {"label": "Project", "url": "https://marmotlab.github.io/taga-humanoid/"}],
+      "type": "article", "arxiv": "2606.05880"
+    },
+    {
+      "id": "kivi", "year": 2026, "venue": "IROS · 2026", "venue_full": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+      "title": "KiVi: Kinesthetic-Visuospatial Integration for Dynamic and Safe Egocentric Legged Locomotion",
+      "authors": ["Peizhuo Li", "Hongyi Li", "Yuxuan Ma", "Linnan Chang", "Xinrong Yang", "Ruiqi Yu", "Shuhao Liao", "Yifeng Zhang", "Yuhong Cao", "Qiuguo Zhu", "Guillaume Sartoretti"],
+      "description": "Balancing proprioception and vision for robust quadruped locomotion under visual disturbances.",
+      "media": "kivi", "video": true,
+      "links": [{"label": "Paper", "url": "https://arxiv.org/abs/2509.23650"}, {"label": "Project", "url": "https://marmotlab.github.io/kivi-quadruped/"}],
+      "type": "inproceedings", "arxiv": "2509.23650"
+    },
+    {
+      "id": "sigma", "year": 2025, "venue": "ICRA · 2025", "venue_full": "IEEE International Conference on Robotics and Automation",
+      "title": "SIGMA: Sheaf-Informed Geometric Multi-Agent Pathfinding",
+      "authors": ["Shuhao Liao", "Weihang Xia", "Yuhong Cao", "Weiheng Dai", "Chengyang He", "Wenjun Wu", "Guillaume Sartoretti"],
+      "description": "Using local geometric consensus to enable decentralized cooperation and collision-free pathfinding.",
+      "media": "sigma", "video": true,
+      "links": [{"label": "Paper", "url": "https://arxiv.org/abs/2502.06440"}, {"label": "Code", "url": "https://github.com/marmotlab/SIGMA"}],
+      "type": "inproceedings", "arxiv": "2502.06440", "doi": "10.1109/ICRA55743.2025.11127434"
+    },
+    {
+      "id": "pse", "year": 2024, "venue": "AAAI · 2024", "venue_full": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "title": "Leveraging Partial Symmetry for Multi-Agent Reinforcement Learning",
+      "authors": ["Xin Yu", "Rongye Shi", "Pu Feng", "Yongkai Tian", "Simin Li", "Shuhao Liao", "Wenjun Wu"],
+      "description": "Adaptively exploiting partial symmetry to improve learning efficiency and multi-agent coordination.",
+      "media": "pse", "video": false,
+      "links": [{"label": "Paper", "url": "https://arxiv.org/abs/2401.00167"}, {"label": "Project", "url": "https://xinyu-site.github.io/PSE/"}],
+      "type": "inproceedings", "arxiv": "2401.00167"
+    },
+    {
+      "id": "air-m", "year": 2023, "venue": "IROS · 2023", "venue_full": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+      "title": "Air-M: A Visual Reality Many-Agent Reinforcement Learning Platform for Large-Scale Aerial Unmanned System",
+      "authors": ["Jiabin Lou", "Wenjun Wu", "Shuhao Liao", "Rongye Shi"],
+      "description": "A many-agent reinforcement learning platform for research on large-scale aerial robot systems.",
+      "media": "air-m", "video": true,
+      "links": [{"label": "Paper", "url": "https://ieeexplore.ieee.org/document/10341405"}],
+      "type": "inproceedings"
+    }
+  ]
+}

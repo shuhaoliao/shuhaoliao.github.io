@@ -1,2 +1,7 @@
 _site/
 
+# Local preview and Python caches
+__pycache__/
+*.pyc
+.preview/
+
