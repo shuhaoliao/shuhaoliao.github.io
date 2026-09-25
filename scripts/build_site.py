@@ -75,7 +75,7 @@ news_items = ''.join(news(n) for n in data['news'])
 description = f"{data['name']} — research in robot learning, embodied intelligence, autonomous exploration, and multi-agent systems."
 if data.get('position'):
     description = f"{data['name']} — {data['position']}. Research in robot learning, embodied intelligence, and multi-agent systems."
-schema = {'@context': 'https://schema.org', '@type': 'Person', 'name': data['name'], 'url': data['url'], 'image': data['url'] + '/assets/site/media/portrait.webp', 'sameAs': [s['url'] for s in data['socials']], 'knowsAbout': ['Robot learning', 'Reinforcement learning', 'Multi-agent systems', 'Legged locomotion']}
+schema = {'@context': 'https://schema.org', '@type': 'Person', 'name': data['name'], 'url': data['url'], 'image': data['url'] + '/assets/site/media/portrait.png', 'sameAs': [s['url'] for s in data['socials']], 'knowsAbout': ['Robot learning', 'Reinforcement learning', 'Multi-agent systems', 'Legged locomotion']}
 if data.get('scholar'):
     schema['sameAs'].append(data['scholar'])
 if data.get('affiliations'):
@@ -93,11 +93,11 @@ html = f'''<!doctype html>
   <meta property="og:title" content="{e(data['name'], quote=True)} | Robot Learning &amp; Embodied Intelligence">
   <meta property="og:description" content="{e(description, quote=True)}">
   <meta property="og:url" content="{data['url']}/">
-  <meta property="og:image" content="{data['url']}/assets/site/media/portrait.webp">
+  <meta property="og:image" content="{data['url']}/assets/site/media/portrait.png">
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="{data['url']}/">
   <link rel="icon" type="image/svg+xml" href="assets/site/favicon.svg">
-  <link rel="preload" href="assets/site/media/portrait.webp" as="image">
+  <link rel="preload" href="assets/site/media/portrait.png" as="image">
   <script src="assets/site/theme.js"></script>
   <link rel="stylesheet" href="assets/site/style.css">
   <script type="application/ld+json">{json.dumps(schema).replace('<', chr(92) + 'u003c')}</script>
@@ -127,7 +127,7 @@ html = f'''<!doctype html>
         <div class="bio">{bio}</div>
       </div>
       <figure class="profile">
-        <img class="portrait" src="assets/site/media/portrait.webp" alt="Portrait of {e(data['name'], quote=True)}" width="600" height="873" fetchpriority="high">
+        <img class="portrait" src="assets/site/media/portrait.png" alt="Portrait of {e(data['name'], quote=True)}" width="1040" height="1512" fetchpriority="high">
         <figcaption class="socials" aria-label="Academic profiles and contact">{social_html}</figcaption>
       </figure>
     </section>

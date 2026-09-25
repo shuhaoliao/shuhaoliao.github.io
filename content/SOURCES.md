@@ -6,7 +6,8 @@ Verified on 2026-09-25. This file is an editing reference, not visitor-facing pa
 
 - Name and GitHub profile: https://github.com/shuhaoliao
 - Bibliography: https://dblp.org/pid/364/3751.html
-- Portrait and all seven paper preview assets: provided in the local `CV/Website` materials directory.
+- Portrait: replaced with the author-provided `CV/Website/2.png` on 2026-09-25, copied without image modifications to `assets/site/media/portrait.png`.
+- All seven paper preview assets: provided in the local `CV/Website` materials directory.
 - The introductory research description is an editorial synthesis of the supplied papers, not a quoted biography.
 - The author clarified on 2026-09-25 that the primary position is Ph.D. Student at Beihang University's State Key Laboratory of Complex and Critical Software Environment (SKLCCSE), advised by Wenjun Wu and Jie Luo. The NUS affiliation is joint Ph.D. training during 2025–2026, advised by Guillaume Sartoretti. The subtitle names only Beihang University; the NUS training appears in the same biography paragraph. No independent second doctorate or professorial rank is inferred.
 - Google Scholar, supplied by the author: https://scholar.google.com/citations?user=jkdFnxkAAAAJ&hl=en
