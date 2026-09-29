@@ -60,8 +60,6 @@ def publication(p):
         + ('<sup>*</sup>' if a in equal_contribution else '')
         for a in p['authors']
     )
-    if equal_contribution:
-        authors += ' <span>(* Equal contribution)</span>'
     links = ''.join(link(l['url'], l['label'], PAPER if l['label'] == 'Paper' else ARROW) for l in p['links'])
     return f'''<article class="publication" id="{p['id']}" aria-labelledby="title-{p['id']}">
       <figure class="preview">{media}<span class="media-label">{e(p['id'].upper())}</span></figure>
@@ -159,6 +157,7 @@ html = f'''<!doctype html>
     <section class="section pub-section" id="publications" aria-labelledby="pub-heading">
       <div class="section-top"><div class="section-label"><h2 id="pub-heading">Selected publications</h2><span class="count">{len(data['publications'])} works</span></div>
         <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="true" hidden>Ⅱ Pause previews</button>
+        <p class="contribution-note">* Equal contribution</p>
       </div>
       <div class="publications">{pubs}</div>
     </section>
