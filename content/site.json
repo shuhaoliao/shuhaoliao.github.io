@@ -7,7 +7,7 @@
   "email": "lsh_iai@buaa.edu.cn",
   "scholar": "https://scholar.google.com/citations?user=jkdFnxkAAAAJ&hl=en",
   "cv": "",
-  "updated": "2026-09-25",
+  "updated": "2026-09-29",
   "bio": [
     [
       {"text": "I am a Ph.D. student at the State Key Laboratory of Complex and Critical Software Environment (SKLCCSE), Beihang University, advised by "},
@@ -28,6 +28,16 @@
     {"date": "2023", "label": "2023", "topic": "a many-agent reinforcement learning platform for aerial robots", "paper": "Air-M", "paper_id": "air-m", "venue": "IROS 2023", "url": "https://ieeexplore.ieee.org/document/10341405", "source": "https://dblp.org/pid/364/3751.html"}
   ],
   "publications": [
+    {
+      "id": "robofoundry", "year": 2026, "venue": "arXiv · 2026", "venue_full": "arXiv preprint arXiv:2609.32862",
+      "title": "RoboFoundry: System-as-Policy Evolution for Self-Learning Embodied Agents",
+      "authors": ["Jingsong Liang", "Shuhao Liao", "Shizhe Zhang", "Diyuan Hou", "Yuxin Cai", "Xinjian Deng", "Chengyang He", "Wenhui Huang", "Runjia Tan", "Zhidong Wang", "Lan Yu", "Xuesong Tian", "Guillaume Sartoretti", "Jie Luo", "Yao Mu", "Wenjun Wu", "Wanhua Li", "Chen Lv"],
+      "equal_contribution": ["Jingsong Liang", "Shuhao Liao"],
+      "description": "Evolving memory and skill systems from execution experience to build self-learning embodied agents across robots.",
+      "media": "robofoundry", "video": false,
+      "links": [{"label": "Paper", "url": "https://arxiv.org/abs/2609.32862"}, {"label": "Project", "url": "https://jingsongliang.com/robofoundry/"}, {"label": "Code", "url": "https://github.com/robofoundry2026/RoboFoundry"}],
+      "type": "article", "arxiv": "2609.32862"
+    },
     {
       "id": "fare", "year": 2026, "venue": "arXiv · 2026", "venue_full": "arXiv preprint arXiv:2601.14681",
       "title": "FARE: Fast-Slow Agentic Robotic Exploration",

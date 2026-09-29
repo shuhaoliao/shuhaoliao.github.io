@@ -41,7 +41,14 @@ def publication(p):
     media = f'<img class="still" src="{poster}" alt="{alt}" loading="lazy" width="640" height="400">'
     if p['video']:
         media += f'<video data-src="assets/site/media/{p["media"]}.mp4" poster="{poster}" muted loop playsinline preload="none" aria-label="{alt}"></video>'
-    authors = ', '.join(f'<strong>{e(a)}</strong>' if a == data['name'] else e(a) for a in p['authors'])
+    equal_contribution = p.get('equal_contribution', [])
+    authors = ', '.join(
+        (f'<strong>{e(a)}</strong>' if a == data['name'] else e(a))
+        + ('<sup>*</sup>' if a in equal_contribution else '')
+        for a in p['authors']
+    )
+    if equal_contribution:
+        authors += ' <span>(* Equal contribution)</span>'
     links = ''.join(link(l['url'], l['label'], PAPER if l['label'] == 'Paper' else ARROW) for l in p['links'])
     return f'''<article class="publication" id="{p['id']}" aria-labelledby="title-{p['id']}">
       <figure class="preview">{media}<span class="media-label">{e(p['id'].upper())}</span></figure>

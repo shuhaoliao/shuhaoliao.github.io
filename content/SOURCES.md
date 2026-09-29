@@ -21,6 +21,7 @@ Verified on 2026-09-25. This file is an editing reference, not visitor-facing pa
 
 | Work | Author/title source | Displayed venue/status | Additional source |
 | --- | --- | --- | --- |
+| RoboFoundry | https://arxiv.org/abs/2609.32862 | arXiv, 2026 | https://jingsongliang.com/robofoundry/; first submission: 26 Sep 2026 |
 | FARE | https://arxiv.org/abs/2601.14681 | arXiv, 2026 | First submission: 21 Jan 2026 |
 | GPO | https://arxiv.org/abs/2601.20668 | arXiv, 2026 | First submission: 28 Jan 2026 |
 | TAGA | https://arxiv.org/abs/2606.05880 | arXiv, 2026 | https://marmotlab.github.io/taga-humanoid/ labels this work Under Review |
@@ -30,6 +31,8 @@ Verified on 2026-09-25. This file is an editing reference, not visitor-facing pa
 | Air-M | https://ieeexplore.ieee.org/document/10341405 | IROS, 2023 | https://dblp.org/pid/364/3751.html |
 
 All authors are displayed in source order, with Shuhao Liao emphasized; no equal-contribution status is inferred.
+
+RoboFoundry was added on 2026-09-29. Its project page and arXiv source explicitly mark Jingsong Liang and Shuhao Liao as equal contributors. The static preview is `robo_teaser.png` (Figure 1, label `fig:robo_teaser`) from https://arxiv.org/e-print/2609.32862, converted losslessly to `assets/site/media/robofoundry.webp`. The full teaser is displayed without animation. The code link comes from the project page: https://github.com/robofoundry2026/RoboFoundry. As an arXiv preprint, it is not added to acceptance news.
 
 ## Acceptance news
 
