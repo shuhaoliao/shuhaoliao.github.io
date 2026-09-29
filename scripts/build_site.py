@@ -1,6 +1,8 @@
 """Build the static academic homepage. Uses only the Python standard library."""
 from pathlib import Path
 from html import escape
+from functools import lru_cache
+from hashlib import sha256
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -8,6 +10,14 @@ data = json.loads((ROOT / 'content/site.json').read_text(encoding='utf-8'))
 e = escape
 ARROW = '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg>'
 PAPER = '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8zM14 3v5h5M8 12h8M8 16h6"/></svg>'
+
+
+@lru_cache(maxsize=None)
+def asset_url(path):
+    content = (ROOT / path).read_bytes()
+    if Path(path).suffix in {'.js', '.css', '.svg'}:
+        content = content.replace(b'\r\n', b'\n')
+    return f'{path}?v={sha256(content).hexdigest()[:12]}'
 
 
 def link(url, label, icon=''):
@@ -36,12 +46,14 @@ def bibtex(p):
 
 
 def publication(p):
-    poster = f"assets/site/media/{p['media']}.webp"
+    poster = asset_url(f"assets/site/media/{p['media']}.webp")
     alt = e(f"{p['title'].split(':')[0]} research preview")
-    animation = f' data-animated-src="assets/site/media/{p["media"]}.gif" data-still-src="{poster}"' if p.get('gif') else ''
-    media = f'<img class="still" src="{poster}"{animation} alt="{alt}" loading="lazy" width="640" height="400">'
+    image_src = asset_url(f"assets/site/media/{p['media']}.gif") if p.get('gif') else poster
+    animation = f' data-animated-src="{image_src}" data-still-src="{poster}"' if p.get('gif') else ''
+    media = f'<img class="still" src="{image_src}"{animation} alt="{alt}" loading="lazy" width="640" height="400">'
     if p['video']:
-        media += f'<video data-src="assets/site/media/{p["media"]}.mp4" poster="{poster}" muted loop playsinline preload="none" aria-label="{alt}"></video>'
+        video_src = asset_url(f"assets/site/media/{p['media']}.mp4")
+        media += f'<video data-src="{video_src}" poster="{poster}" muted loop playsinline preload="none" aria-label="{alt}"></video>'
     equal_contribution = p.get('equal_contribution', [])
     authors = ', '.join(
         (f'<strong>{e(a)}</strong>' if a == data['name'] else e(a))
@@ -104,12 +116,12 @@ html = f'''<!doctype html>
   <meta property="og:image" content="{data['url']}/assets/site/media/portrait.png">
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="{data['url']}/">
-  <link rel="icon" type="image/svg+xml" href="assets/site/favicon.svg">
-  <link rel="preload" href="assets/site/media/portrait.png" as="image">
-  <script src="assets/site/theme.js"></script>
-  <link rel="stylesheet" href="assets/site/style.css">
+  <link rel="icon" type="image/svg+xml" href="{asset_url('assets/site/favicon.svg')}">
+  <link rel="preload" href="{asset_url('assets/site/media/portrait.png')}" as="image">
+  <script src="{asset_url('assets/site/theme.js')}"></script>
+  <link rel="stylesheet" href="{asset_url('assets/site/style.css')}">
   <script type="application/ld+json">{json.dumps(schema).replace('<', chr(92) + 'u003c')}</script>
-  <script src="assets/site/main.js" defer></script>
+  <script src="{asset_url('assets/site/main.js')}" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -135,7 +147,7 @@ html = f'''<!doctype html>
         <div class="bio">{bio}</div>
       </div>
       <figure class="profile">
-        <img class="portrait" src="assets/site/media/portrait.png" alt="Portrait of {e(data['name'], quote=True)}" width="1040" height="1512" fetchpriority="high">
+        <img class="portrait" src="{asset_url('assets/site/media/portrait.png')}" alt="Portrait of {e(data['name'], quote=True)}" width="1040" height="1512" fetchpriority="high">
         <figcaption class="socials" aria-label="Academic profiles and contact">{social_html}</figcaption>
       </figure>
     </section>
