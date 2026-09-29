@@ -14,31 +14,36 @@ themeButton.addEventListener('click', () => {
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const motionButton = document.querySelector('#motion-toggle');
 motionButton.hidden = false;
-const videos = [...document.querySelectorAll('video[data-src]')];
-const visibleVideos = new Set();
+const previews = [...document.querySelectorAll('video[data-src], img[data-animated-src]')];
+const visiblePreviews = new Set();
 let motionEnabled = !reducedMotion.matches;
 function motionLabel() {
   motionButton.textContent = motionEnabled ? 'Ⅱ Pause previews' : '▷ Play previews';
   motionButton.setAttribute('aria-pressed', String(motionEnabled));
 }
-function syncVideos() {
-  videos.forEach(video => {
-    const shouldPlay = motionEnabled && visibleVideos.has(video) && !document.hidden;
+function syncPreviews() {
+  previews.forEach(preview => {
+    const shouldPlay = motionEnabled && visiblePreviews.has(preview) && !document.hidden;
+    if (preview.dataset.animatedSrc) {
+      const source = shouldPlay ? preview.dataset.animatedSrc : preview.dataset.stillSrc;
+      if (preview.getAttribute('src') !== source) preview.src = source;
+      return;
+    }
     if (shouldPlay) {
-      if (!video.getAttribute('src')) video.src = video.dataset.src;
-      video.play().catch(() => { /* Its poster remains visible if autoplay is unavailable. */ });
-    } else video.pause();
+      if (!preview.getAttribute('src')) preview.src = preview.dataset.src;
+      preview.play().catch(() => { /* Its poster remains visible if autoplay is unavailable. */ });
+    } else preview.pause();
   });
 }
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => entry.isIntersecting ? visibleVideos.add(entry.target) : visibleVideos.delete(entry.target));
-    syncVideos();
+    entries.forEach(entry => entry.isIntersecting ? visiblePreviews.add(entry.target) : visiblePreviews.delete(entry.target));
+    syncPreviews();
   }, { threshold: 0.12 });
-  videos.forEach(video => observer.observe(video));
-} else videos.forEach(video => visibleVideos.add(video));
-motionButton.addEventListener('click', () => { motionEnabled = !motionEnabled; motionLabel(); syncVideos(); });
-reducedMotion.addEventListener('change', event => { motionEnabled = !event.matches; motionLabel(); syncVideos(); });
-document.addEventListener('visibilitychange', syncVideos);
+  previews.forEach(preview => observer.observe(preview));
+} else previews.forEach(preview => visiblePreviews.add(preview));
+motionButton.addEventListener('click', () => { motionEnabled = !motionEnabled; motionLabel(); syncPreviews(); });
+reducedMotion.addEventListener('change', event => { motionEnabled = !event.matches; motionLabel(); syncPreviews(); });
+document.addEventListener('visibilitychange', syncPreviews);
 motionLabel();
-syncVideos();
+syncPreviews();

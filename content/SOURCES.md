@@ -32,7 +32,7 @@ Verified on 2026-09-25. This file is an editing reference, not visitor-facing pa
 
 All authors are displayed in source order, with Shuhao Liao emphasized; no equal-contribution status is inferred.
 
-RoboFoundry was added on 2026-09-29. Its project page and arXiv source explicitly mark Jingsong Liang and Shuhao Liao as equal contributors. The static preview is `robo_teaser.png` (Figure 1, label `fig:robo_teaser`) from https://arxiv.org/e-print/2609.32862, converted losslessly to `assets/site/media/robofoundry.webp`. The full teaser is displayed without animation. The code link comes from the project page: https://github.com/robofoundry2026/RoboFoundry. As an arXiv preprint, it is not added to acceptance news.
+RoboFoundry was added on 2026-09-29. Its project page and arXiv source explicitly mark Jingsong Liang and Shuhao Liao as equal contributors. The initial static preview came from `robo_teaser.png` (Figure 1, label `fig:robo_teaser`) in https://arxiv.org/e-print/2609.32862. At the author's request, it was replaced on 2026-09-29 with `assets/site/media/robofoundry.gif`, converted from the supplied `9.26.mp4`: the full 20.5 seconds at 640 × 360 and 12 fps, looping. The accompanying WebP is the video's first frame, used when previews are paused or reduced motion is preferred. The code link comes from the project page: https://github.com/robofoundry2026/RoboFoundry. As an arXiv preprint, it is not added to acceptance news.
 
 ## Acceptance news
 

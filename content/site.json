@@ -34,7 +34,7 @@
       "authors": ["Jingsong Liang", "Shuhao Liao", "Shizhe Zhang", "Diyuan Hou", "Yuxin Cai", "Xinjian Deng", "Chengyang He", "Wenhui Huang", "Runjia Tan", "Zhidong Wang", "Lan Yu", "Xuesong Tian", "Guillaume Sartoretti", "Jie Luo", "Yao Mu", "Wenjun Wu", "Wanhua Li", "Chen Lv"],
       "equal_contribution": ["Jingsong Liang", "Shuhao Liao"],
       "description": "Evolving memory and skill systems from execution experience to build self-learning embodied agents across robots.",
-      "media": "robofoundry", "video": false,
+      "media": "robofoundry", "video": false, "gif": true,
       "links": [{"label": "Paper", "url": "https://arxiv.org/abs/2609.32862"}, {"label": "Project", "url": "https://jingsongliang.com/robofoundry/"}, {"label": "Code", "url": "https://github.com/robofoundry2026/RoboFoundry"}],
       "type": "article", "arxiv": "2609.32862"
     },

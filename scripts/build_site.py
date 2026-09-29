@@ -38,7 +38,8 @@ def bibtex(p):
 def publication(p):
     poster = f"assets/site/media/{p['media']}.webp"
     alt = e(f"{p['title'].split(':')[0]} research preview")
-    media = f'<img class="still" src="{poster}" alt="{alt}" loading="lazy" width="640" height="400">'
+    animation = f' data-animated-src="assets/site/media/{p["media"]}.gif" data-still-src="{poster}"' if p.get('gif') else ''
+    media = f'<img class="still" src="{poster}"{animation} alt="{alt}" loading="lazy" width="640" height="400">'
     if p['video']:
         media += f'<video data-src="assets/site/media/{p["media"]}.mp4" poster="{poster}" muted loop playsinline preload="none" aria-label="{alt}"></video>'
     equal_contribution = p.get('equal_contribution', [])
