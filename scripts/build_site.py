@@ -4,6 +4,7 @@ from html import escape
 from functools import lru_cache
 from hashlib import sha256
 import json
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 data = json.loads((ROOT / 'content/site.json').read_text(encoding='utf-8'))
@@ -18,6 +19,22 @@ def asset_url(path):
     if Path(path).suffix in {'.js', '.css', '.svg'}:
         content = content.replace(b'\r\n', b'\n')
     return f'{path}?v={sha256(content).hexdigest()[:12]}'
+
+
+def ga4_tag(measurement_id):
+    if not measurement_id:
+        return ''
+    if not re.fullmatch(r'G-[A-Z0-9]+', measurement_id):
+        raise ValueError('Invalid GA4 measurement ID')
+    return f'''  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={measurement_id}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{measurement_id}');
+  </script>
+'''
 
 
 def link(url, label, icon=''):
@@ -102,7 +119,7 @@ html = f'''<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{ga4_tag(data.get("ga4_measurement_id", ""))}  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{e(data['name'])} | Robot Learning &amp; Embodied Intelligence</title>
   <meta name="description" content="{e(description, quote=True)}">
   <meta name="author" content="{e(data['name'], quote=True)}">
